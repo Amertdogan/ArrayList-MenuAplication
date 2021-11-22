@@ -51,11 +51,11 @@ namespace NetworkAkademi_N041_ArrayListOrnek
                         Console.WriteLine("Aranan eleman listede yok.");
                         Console.WriteLine("Bu degeri listeye ekleyelim mi? Evet/Hayır");
                             string secim3 = Console.ReadLine();
-                            if (secim3=="Evet")
+                            if (secim3.ToLower()=="evet")
                             {
                                 degerlerListesi.Add(arananEleman);
                             }
-                            else if (secim3 == "Hayır")
+                            else if (secim3.ToLower() == "hayır")
                             {
                                 Console.WriteLine("Aranan deger eklenmeden devam ediyorsunuz.");
                                 Console.ReadLine();
