@@ -64,12 +64,12 @@ namespace NetworkAkademi_N041_ArrayListOrnek
                         break;
                 case 4:
                         Console.WriteLine("Güncellemek istediginiz degeri giriniz.");
-                        string kullaniciDüzenlenedekDeger = Console.ReadLine();
-                        Console.WriteLine("{0} degerini hangi deger ile degistirmek istiyotunuz? ");
+                        string kullaniciDüzenlenecekDeger = Console.ReadLine();
+                        Console.WriteLine("{0} degerini hangi deger ile degistirmek istiyotunuz? ",kullaniciDüzenlenecekDeger);
                         string kullaniciYeniDeger = Console.ReadLine();
-                        if (degerlerListesi.Contains(kullaniciDüzenlenedekDeger))
+                        if (degerlerListesi.Contains(kullaniciDüzenlenecekDeger))
                         {
-                            int kullaniciHedefIndexDegeri = degerlerListesi.IndexOf(kullaniciDüzenlenedekDeger);
+                            int kullaniciHedefIndexDegeri = degerlerListesi.IndexOf(kullaniciDüzenlenecekDeger);
                             degerlerListesi[kullaniciHedefIndexDegeri] = kullaniciYeniDeger;
                             Console.WriteLine("Degeriniz güncellendi.");
                         }
@@ -80,9 +80,22 @@ namespace NetworkAkademi_N041_ArrayListOrnek
                         System.Threading.Thread.Sleep(200);
                         break;
                 case 5:
-                        Console.WriteLine("Silme istediginiz elemanı giriniz:");
-                        string SilmekİstenenEleman = Console.ReadLine();
-                        degerlerListesi.Remove(SilmekİstenenEleman);
+                        Console.WriteLine("Tüm degerlerimi silmek istediginiz elemanı giriniz ? Evet/Hayır");
+                        string secim2 = Console.ReadLine();
+                        if (secim2.ToLower()=="evet")
+                        {
+                            degerlerListesi.Clear();
+                            Console.WriteLine("Tüm degerler silindi.");
+                        }
+                        else if (secim2.ToLower()=="hayır")
+                        {
+                            Console.WriteLine("Silmek istediginiz elemanı yazınız.");
+                            string SilmekİstenenEleman = Console.ReadLine();
+                            degerlerListesi.Remove(SilmekİstenenEleman);
+                            Console.WriteLine("Deger silindi.");
+                        }
+                       
+                        
                         break;
 
                 case 6:
